@@ -102,9 +102,5 @@ class _HomeState extends State<Home> {
       ),
 
     );
-
-    return Scaffold(
-      body: Center(child: ElevatedButton(onPressed: () {}, child: Text("Button"))),
-    );
   }
 }
