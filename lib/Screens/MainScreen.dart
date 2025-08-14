@@ -305,7 +305,7 @@ class _PromoteAppState extends State<PromoteApp> {
                       children: <Widget>[
 
 
-                        Text("Powered By: Ishan Kanaujiya", style: TextStyle(
+                        Text("Powered By: Null Reference", style: TextStyle(
                           fontSize: 10,
                           fontWeight: FontWeight.bold,
                           color: iconColor.withOpacity(0.5),

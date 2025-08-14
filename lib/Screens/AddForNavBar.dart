@@ -528,6 +528,7 @@ class _AddForBottomNavBarState extends State<AddForBottomNavBar> {
                           ));
                           return;
                         }
+                        print("The date selected is $dateSelected");
                         Navigator.pushReplacement(context, MaterialPageRoute(
                             builder: (context) => Home(categoriesSelected, amountSelected, paymentMethodSelected, dateSelected, remarkForExpenseTextField.text)
                         ));
