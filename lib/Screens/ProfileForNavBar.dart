@@ -1,8 +1,15 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:hackathon_expense_tracker/HomePage.dart';
 import 'package:hackathon_expense_tracker/Screens/EditDetails.dart';
 import 'package:hackathon_expense_tracker/Screens/ViewProfile.dart';
+import 'package:image_picker/image_picker.dart';
+import 'package:path_provider/path_provider.dart';
 import 'package:shared_preferences/shared_preferences.dart';
+import 'package:path/path.dart';
+
+
 class ProfileNavBar extends StatefulWidget {
 
 
@@ -24,6 +31,10 @@ class _ProfileNavBarState extends State<ProfileNavBar> {
   String? name;
   String? address;
 
+  File? image;
+
+  final picker = ImagePicker();
+
   void initState()
   {
     super.initState();
@@ -35,6 +46,12 @@ class _ProfileNavBarState extends State<ProfileNavBar> {
   {
     var pref = await SharedPreferences.getInstance();
 
+    final prefs = await SharedPreferences.getInstance();
+    final path = prefs.getString('pictureFormGallery');
+    if (path != null && File(path).existsSync()) {
+      setState(() => image = File(path));
+    }
+
     setState(() {
       name = pref.getString(KEYFORNAME) ?? "";
       address = pref.getString(KEYFORADDRESS) ?? "";
@@ -42,6 +59,24 @@ class _ProfileNavBarState extends State<ProfileNavBar> {
 
 
   }
+
+  Future<void> pickImageFromGallery() async
+  {
+    final pickedImage = await picker.pickImage(source: ImageSource.gallery);
+
+    if(pickedImage == null) return;
+
+    final dir = await getApplicationDocumentsDirectory();
+    final saved = await File(pickedImage.path).copy('${dir.path}/${basename(pickedImage.path)}');
+
+    var pref = await SharedPreferences.getInstance();
+    pref.setString("pictureFormGallery", saved.path);
+
+    setState(() {
+      image = saved;
+    });
+  }
+
 
   @override
   Widget build(BuildContext context) {
@@ -150,7 +185,8 @@ class _ProfileNavBarState extends State<ProfileNavBar> {
                         // radius: 10,
                         backgroundColor: Colors.transparent,
                         // backgroundImage: NetworkImage("https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0="),
-                        backgroundImage:AssetImage("assets/person.webp"),
+                        backgroundImage: image != null ? FileImage(image!) : null,
+                        child: image == null ? Icon(Icons.person_sharp, size: 100, color: Colors.white,) : null,
                       )
                   ),
                 ),
@@ -211,19 +247,22 @@ class _ProfileNavBarState extends State<ProfileNavBar> {
             Positioned(
               right: 95,
               top: 160,
-              child: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: iconColor.withOpacity(0.7),
-                    // border: Border.all(
-                    //   color: Colors.cyan,
-                    //   width: 3,
-                    // ),
+              child: InkWell(
+                onTap: pickImageFromGallery,
+                child: Container(
+                  width: 50,
+                  height: 50,
+                  decoration: BoxDecoration(
+                      color: iconColor.withOpacity(0.7),
+                      // border: Border.all(
+                      //   color: Colors.cyan,
+                      //   width: 3,
+                      // ),
 
-                    borderRadius: BorderRadius.circular(100)
+                      borderRadius: BorderRadius.circular(100)
+                  ),
+                  child: Icon(Icons.edit, size: 30, color: Colors.white,),
                 ),
-                child: Icon(Icons.edit, size: 30, color: Colors.white,),
               ),
             ),
 

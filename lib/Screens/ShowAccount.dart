@@ -149,7 +149,7 @@ class _ShowUserAccountState extends State<ShowUserAccount> {
                           // radius: 10,
                           backgroundColor: Colors.transparent,
                           // backgroundImage: NetworkImage("https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0="),
-                          backgroundImage:AssetImage("assets/person.webp"),
+                          backgroundImage:AssetImage("assets/personal.png"),
                         )
                     ),
                   ),
@@ -207,24 +207,24 @@ class _ShowUserAccountState extends State<ShowUserAccount> {
                 ),
               ),
 
-              Positioned(
-                right: 95,
-                top: 160,
-                child: Container(
-                  width: 50,
-                  height: 50,
-                  decoration: BoxDecoration(
-                      color: iconColor.withOpacity(0.7),
-                      // border: Border.all(
-                      //   color: Colors.cyan,
-                      //   width: 3,
-                      // ),
-
-                      borderRadius: BorderRadius.circular(100)
-                  ),
-                  child: Icon(Icons.edit, size: 30, color: Colors.white,),
-                ),
-              ),
+              // Positioned(
+              //   right: 95,
+              //   top: 160,
+              //   child: Container(
+              //     width: 50,
+              //     height: 50,
+              //     decoration: BoxDecoration(
+              //         color: iconColor.withOpacity(0.7),
+              //         // border: Border.all(
+              //         //   color: Colors.cyan,
+              //         //   width: 3,
+              //         // ),
+              //
+              //         borderRadius: BorderRadius.circular(100)
+              //     ),
+              //     child: Icon(Icons.edit, size: 30, color: Colors.white,),
+              //   ),
+              // ),
 
 
               Positioned(

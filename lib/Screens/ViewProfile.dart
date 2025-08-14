@@ -1,5 +1,8 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:hackathon_expense_tracker/HomePage.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class ViewUserProfile extends StatefulWidget {
 
@@ -24,6 +27,11 @@ class _ViewUserProfileState extends State<ViewUserProfile> {
   String? email;
   String? phoneNumber;
 
+  File? image;
+
+  final picker = ImagePicker();
+
+
   void initState()
   {
     super.initState();
@@ -34,6 +42,12 @@ class _ViewUserProfileState extends State<ViewUserProfile> {
   void getValue() async
   {
     var pref = await SharedPreferences.getInstance();
+
+    final prefs = await SharedPreferences.getInstance();
+    final path = prefs.getString('pictureFormGallery');
+    if (path != null && File(path).existsSync()) {
+      setState(() => image = File(path));
+    }
 
     setState(() {
       name = pref.getString(KEYFORNAME) ?? "";
@@ -115,7 +129,8 @@ class _ViewUserProfileState extends State<ViewUserProfile> {
                         // radius: 10,
                         backgroundColor: Colors.transparent,
                         // backgroundImage: NetworkImage("https://media.hswstatic.com/eyJidWNrZXQiOiJjb250ZW50Lmhzd3N0YXRpYy5jb20iLCJrZXkiOiJnaWZcL3BsYXlcLzBiN2Y0ZTliLWY1OWMtNDAyNC05ZjA2LWIzZGMxMjg1MGFiNy0xOTIwLTEwODAuanBnIiwiZWRpdHMiOnsicmVzaXplIjp7IndpZHRoIjo4Mjh9fX0="),
-                        backgroundImage:AssetImage("assets/person.webp"),
+                        backgroundImage: image != null ? FileImage(image!) : null,
+                        child: image == null ? Icon(Icons.person_sharp, size: 100, color: Colors.white,) : null,
                       )
                   ),
                 ),
@@ -173,24 +188,24 @@ class _ViewUserProfileState extends State<ViewUserProfile> {
               ),
             ),
 
-            Positioned(
-              right: 95,
-              top: 160,
-              child: Container(
-                width: 50,
-                height: 50,
-                decoration: BoxDecoration(
-                    color: iconColor.withOpacity(0.7),
-                    // border: Border.all(
-                    //   color: Colors.cyan,
-                    //   width: 3,
-                    // ),
-
-                    borderRadius: BorderRadius.circular(100)
-                ),
-                child: Icon(Icons.edit, size: 30, color: Colors.white,),
-              ),
-            ),
+            // Positioned(
+            //   right: 95,
+            //   top: 160,
+            //   child: Container(
+            //     width: 50,
+            //     height: 50,
+            //     decoration: BoxDecoration(
+            //         color: iconColor.withOpacity(0.7),
+            //         // border: Border.all(
+            //         //   color: Colors.cyan,
+            //         //   width: 3,
+            //         // ),
+            //
+            //         borderRadius: BorderRadius.circular(100)
+            //     ),
+            //     child: Icon(Icons.edit, size: 30, color: Colors.white,),
+            //   ),
+            // ),
 
 
             Positioned(

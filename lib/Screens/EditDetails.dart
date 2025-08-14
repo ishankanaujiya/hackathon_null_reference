@@ -54,7 +54,7 @@ class _EditUserDetailsState extends State<EditUserDetails> {
     emailTextField.text = pref.getString(KEYFOREMAIL).toString();
     phoneNumberTextField.text = pref.getString(KEYFORNUMBER).toString();
     setState(() {
-      
+
     });
   }
   @override
@@ -215,217 +215,218 @@ class _EditUserDetailsState extends State<EditUserDetails> {
               ),
             ),
 
-            Container(
-              padding: EdgeInsets.only(left: 30.0, right: 30.0),
-              child: Column(
-                children: <Widget>[
-                  Container(
-                    padding: EdgeInsets.only(left: 0.0, right: 6.0),
-                    margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
-                    decoration: BoxDecoration(
-                      color: iconColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10),
-
-                    ),
-
-                    child: TextField(
-                      controller: nameTextField,
-                      // controller: amountForExpenseTextField,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-
-                        label: Text("Name", style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: iconColor,
-                        ),),
-                        
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
-
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
-
-                        disabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
+            SingleChildScrollView(
+              child: Container(
+                padding: EdgeInsets.only(left: 30.0, right: 30.0),
+                child: Column(
+                  children: <Widget>[
+                    Container(
+                      padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                      margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
+                      decoration: BoxDecoration(
+                        color: iconColor.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
 
                       ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 0.0, right: 6.0),
-                    margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
-                    decoration: BoxDecoration(
-                      color: iconColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10),
 
-                    ),
-
-                    child: TextField(
-                      controller: addressTextField,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-
-                        label: Text("Address", style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: iconColor,
-                        ),),
-                        
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
+                      child: TextField(
+                        controller: nameTextField,
+                        // controller: amountForExpenseTextField,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
                         ),
+                        decoration: InputDecoration(
 
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
+                          label: Text("Name", style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: iconColor,
+                          ),),
 
-                            )
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          disabledBorder:OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
                         ),
-
-                        disabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
-
                       ),
                     ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 0.0, right: 6.0),
-                    margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
-                    decoration: BoxDecoration(
-                      color: iconColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10),
-
-                    ),
-
-                    child: TextField(
-                      controller: emailTextField,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-
-                        label: Text("Email", style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: iconColor,
-                        ),),
-                        
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
-
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
-
-                        disabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
+                    Container(
+                      padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                      margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
+                      decoration: BoxDecoration(
+                        color: iconColor.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
 
                       ),
-                    ),
-                  ),
-                  Container(
-                    padding: EdgeInsets.only(left: 0.0, right: 6.0),
-                    margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
-                    decoration: BoxDecoration(
-                      color: iconColor.withOpacity(0.1),
-                      borderRadius: BorderRadius.circular(10),
 
-                    ),
-
-                    child: TextField(
-                      controller: phoneNumberTextField,
-                      keyboardType: TextInputType.number,
-                      style: TextStyle(
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
-                        color: Colors.black,
-                      ),
-                      decoration: InputDecoration(
-
-                        label: Text("Phone Number", style: TextStyle(
-                          fontSize: 15,
-                          fontWeight: FontWeight.bold,
-                          color: iconColor,
-                        ),),
-                        
-                        enabledBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
+                      child: TextField(
+                        controller: addressTextField,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
                         ),
+                        decoration: InputDecoration(
 
-                        focusedBorder: OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
+                          label: Text("Address", style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: iconColor,
+                          ),),
 
-                            )
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          disabledBorder:OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
                         ),
-
-                        disabledBorder:OutlineInputBorder(
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-
-                            )
-                        ),
-
                       ),
                     ),
-                  ),
+                    Container(
+                      padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                      margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
+                      decoration: BoxDecoration(
+                        color: iconColor.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
 
-                  SizedBox(
-                    height: 50,
-                  ),
+                      ),
 
-                  SizedBox(
-                    width: 200,
-                    height: 50,
-                    child: ElevatedButton(
-                      onPressed: () {
-                        bool containsAtSign = false;
-                        print("Check");
-                        if(nameTextField.text.isEmpty || addressTextField.text.isEmpty || emailTextField.text.isEmpty || phoneNumberTextField.text.isEmpty)
+                      child: TextField(
+                        controller: emailTextField,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                        decoration: InputDecoration(
+
+                          label: Text("Email", style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: iconColor,
+                          ),),
+
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          disabledBorder:OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                        ),
+                      ),
+                    ),
+                    Container(
+                      padding: EdgeInsets.only(left: 0.0, right: 6.0),
+                      margin: EdgeInsets.only(left: 0.0, right: 0.0, bottom: 0, top: 50.0),
+                      decoration: BoxDecoration(
+                        color: iconColor.withOpacity(0.1),
+                        borderRadius: BorderRadius.circular(10),
+
+                      ),
+
+                      child: TextField(
+                        controller: phoneNumberTextField,
+                        keyboardType: TextInputType.number,
+                        style: TextStyle(
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                          color: Colors.black,
+                        ),
+                        decoration: InputDecoration(
+
+                          label: Text("Phone Number", style: TextStyle(
+                            fontSize: 15,
+                            fontWeight: FontWeight.bold,
+                            color: iconColor,
+                          ),),
+
+                          enabledBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          focusedBorder: OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                          disabledBorder:OutlineInputBorder(
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+
+                              )
+                          ),
+
+                        ),
+                      ),
+                    ),
+
+                    SizedBox(
+                      height: 50,
+                    ),
+
+                    SizedBox(
+                      width: 200,
+                      height: 50,
+                      child: ElevatedButton(
+                        onPressed: () {
+                          bool containsAtSign = false;
+                          print("Check");
+                          if(nameTextField.text.isEmpty || addressTextField.text.isEmpty || emailTextField.text.isEmpty || phoneNumberTextField.text.isEmpty)
                           {
                             showDialog(context: context, builder: (context) => AlertDialog(
                               title: Text("Required", style: TextStyle(
@@ -452,41 +453,41 @@ class _EditUserDetailsState extends State<EditUserDetails> {
                             return;
                           }
 
-                        for(int i = 0; i<phoneNumberTextField.text.length; i++)
+                          for(int i = 0; i<phoneNumberTextField.text.length; i++)
                           {
                             String checkNumber = phoneNumberTextField.text[i];
-                             print(checkNumber);
+                            print(checkNumber);
 
                             if(checkNumber.codeUnitAt(0) >= 65 && checkNumber.codeUnitAt(0) <= 90 || checkNumber.codeUnitAt(0) >= 97 && checkNumber.codeUnitAt(0) <= 122 )
-                              {
-                                showDialog(context: context, builder: (context) => AlertDialog(
-                                  title: Text("Error", style: TextStyle(
-                                    color: Colors.white,
+                            {
+                              showDialog(context: context, builder: (context) => AlertDialog(
+                                title: Text("Error", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+
+                                ),),
+                                content: Text("Only digits from (0-9) are accepted", style: TextStyle(
+                                  color: Colors.white,
+                                  fontWeight: FontWeight.bold,
+
+                                ),),
+                                actions: [
+                                  ElevatedButton(onPressed: () {
+                                    Navigator.pop(context);
+                                  }, child: Text("OK", style: TextStyle(
+                                    color: iconColor,
                                     fontWeight: FontWeight.bold,
 
-                                  ),),
-                                  content: Text("Only digits from (0-9) are accepted", style: TextStyle(
-                                    color: Colors.white,
-                                    fontWeight: FontWeight.bold,
+                                  ),))
+                                ],
+                                backgroundColor: iconColor,
+                              ));
+                              return;
+                              break;
 
-                                  ),),
-                                  actions: [
-                                    ElevatedButton(onPressed: () {
-                                      Navigator.pop(context);
-                                    }, child: Text("OK", style: TextStyle(
-                                      color: iconColor,
-                                      fontWeight: FontWeight.bold,
-
-                                    ),))
-                                  ],
-                                  backgroundColor: iconColor,
-                                ));
-                                return;
-                                break;
-
-                              }
+                            }
                           }
-                        if(phoneNumberTextField.text.length < 10 || phoneNumberTextField.text.length > 10)
+                          if(phoneNumberTextField.text.length < 10 || phoneNumberTextField.text.length > 10)
                           {
                             showDialog(context: context, builder: (context) => AlertDialog(
                               title: Text("Error", style: TextStyle(
@@ -503,8 +504,8 @@ class _EditUserDetailsState extends State<EditUserDetails> {
                                 ElevatedButton(
                                     onPressed: () {
                                       phoneNumberTextField.text = "";
-                                  Navigator.pop(context);
-                                }, child: Text("OK", style: TextStyle(
+                                      Navigator.pop(context);
+                                    }, child: Text("OK", style: TextStyle(
                                   color: iconColor,
                                   fontWeight: FontWeight.bold,
 
@@ -517,16 +518,16 @@ class _EditUserDetailsState extends State<EditUserDetails> {
 
 
 
-                        for(int i = 0; i<emailTextField.text.length; i++)
+                          for(int i = 0; i<emailTextField.text.length; i++)
                           {
                             String checkEmail = emailTextField.text[i];
 
                             if(checkEmail == '@')
-                              {
-                                containsAtSign = true;
-                              }
+                            {
+                              containsAtSign = true;
+                            }
                           }
-                        if(containsAtSign == false)
+                          if(containsAtSign == false)
                           {
                             showDialog(context: context, builder: (context) => AlertDialog(
                               title: Text("Error", style: TextStyle(
@@ -553,22 +554,23 @@ class _EditUserDetailsState extends State<EditUserDetails> {
                             return;
                           }
 
-                        storeValue();
-                        Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home("", "", "", "", "")
-                        ));
+                          storeValue();
+                          Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>Home("", "", "", "", "")
+                          ));
 
-                    },
-                      child: Text("Save Changes", style: TextStyle(
-                      fontWeight: FontWeight.w900,
-                    ),),
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: iconColor,
-                        foregroundColor: Colors.white,
+                        },
+                        child: Text("Save Changes", style: TextStyle(
+                          fontWeight: FontWeight.w900,
+                        ),),
+                        style: ElevatedButton.styleFrom(
+                          backgroundColor: iconColor,
+                          foregroundColor: Colors.white,
+                        ),
                       ),
                     ),
-                  ),
 
-                ],
+                  ],
+                ),
               ),
             ),
 

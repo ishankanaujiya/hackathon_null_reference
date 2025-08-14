@@ -2,6 +2,7 @@ import 'package:flutter/material.dart';
 import 'package:hackathon_expense_tracker/NotificationGenerator.dart';
 import 'package:hackathon_expense_tracker/Screens/AddIncome.dart';
 import 'package:hackathon_expense_tracker/Screens/DisplayCtegoriesDetailsForHome.dart';
+import 'package:hackathon_expense_tracker/Screens/MonthSelection.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 class HomeForBottomNavBar extends StatefulWidget {
 
@@ -775,11 +776,32 @@ class _HomeForBottomNavBarState extends State<HomeForBottomNavBar> {
                     // mainAxisAlignment: MainAxisAlignment.start,
                     crossAxisAlignment: CrossAxisAlignment.start,
                     children: <Widget>[
-                      Text("Transactions", style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.w900,
-                        color: fontColor,
-                      ),),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        children: <Widget>[
+                          Text("Transactions", style: TextStyle(
+                            fontSize: 22,
+                            fontWeight: FontWeight.w900,
+                            color: fontColor,
+                          ),),
+
+                          IconButton(
+                            onPressed: () {
+                              Navigator.pushReplacement(context, MaterialPageRoute(builder: (context) =>MonthlyExpenseSelection()
+                              ));
+                            },
+                            icon: Icon(
+                              Icons.filter_list_alt,
+                              color: fontColor,
+                            ),
+                          ),
+                        ],
+                      ),
+                      // Text("Transactions", style: TextStyle(
+                      //   fontSize: 22,
+                      //   fontWeight: FontWeight.w900,
+                      //   color: fontColor,
+                      // ),),
 
                       Expanded(
                         child: Container(
